@@ -1,0 +1,23 @@
+<mat-table [dataSource]="lista">
+    <!-- User name Definition -->
+    <ng-container matColumnDef="placa">
+        <mat-header-cell *matHeaderCellDef> Placa </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.vehiculo.placa}} </mat-cell>
+    </ng-container>
+
+    <!-- Age Definition -->
+    <ng-container matColumnDef="taller">
+        <mat-header-cell *matHeaderCellDef> Taller </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.taller.sede}} </mat-cell>
+    </ng-container>
+
+    <!-- Title Definition -->
+    <ng-container matColumnDef="fecha">
+        <mat-header-cell *matHeaderCellDef> Fecha </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.fechaDeCita}} {{row.horaDeCita}} </mat-cell>
+    </ng-container>
+
+    <!-- Header and Row Declarations -->
+    <mat-header-row *matHeaderRowDef="['placa', 'taller', 'fecha']"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: ['placa', 'taller', 'fecha']"></mat-row>
+</mat-table>
