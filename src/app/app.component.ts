@@ -11,8 +11,8 @@ export class AppComponent {
 
   constructor() {
     this.routes = [
-      { path: 'home', nombre: 'Home'},
-      { path: 'citas', nombre: 'Mis citas'}
+      { path: 'home', show: true, nombre: 'Home'},
+      { path: 'citas', show: true, nombre: 'Mis citas'}
     ];
   }
 

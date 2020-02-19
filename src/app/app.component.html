@@ -1,7 +1,9 @@
 <mat-drawer-container class="sidenav-container" autosize>
     <mat-drawer #drawer class="sidenav" mode="side" opened>
         <mat-nav-list>
-            <a mat-list-item [routerLink]="item.path" *ngFor="let item of routes">{{item.nombre}}</a>
+            <div [hidden]="!item.show" *ngFor="let item of routes">
+                <a mat-list-item [routerLink]="item.path">{{item.nombre}}</a>
+            </div>
         </mat-nav-list>
     </mat-drawer>
     <div class="sidenav-content">
