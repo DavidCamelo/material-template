@@ -1,19 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import {MatTableModule} from '@angular/material/table';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MaterialModule } from './material/material.module';
+import { AppRoutingModule } from './app-routing.module';
+import { environment } from '../environments/environment';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './pages/home/home.component';
 import { CitasComponent } from './pages/citas/citas.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    CitasComponent
+    HomeComponent,
+    CitasComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,7 @@ import { CitasComponent } from './pages/citas/citas.component';
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
-    MatTableModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'material-template';
-}
+
+  routes;
+
+  constructor() {
+    this.routes = [
+      { path: 'home', nombre: 'Home'},
+      { path: 'citas', nombre: 'Mis citas'}
+    ];
+  }
+
+ }

@@ -1,1 +1,11 @@
-<router-outlet></router-outlet>
+<mat-drawer-container class="sidenav-container" autosize>
+    <mat-drawer #drawer class="sidenav" mode="side" opened>
+        <mat-nav-list>
+            <a mat-list-item [routerLink]="item.path" *ngFor="let item of routes">{{item.nombre}}</a>
+        </mat-nav-list>
+    </mat-drawer>
+    <div class="sidenav-content">
+        <button type="button" mat-button (click)="drawer.toggle()">Toggle sidenav</button>
+        <router-outlet></router-outlet>
+    </div>
+</mat-drawer-container>
